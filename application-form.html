@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css">
+      <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+	  <script type="text/javascript" src="va.js"></script>
+      <script type="text/javascript">
+         /* page specific js */
+
+
+          $( document ).ready(function() {
+
+            $("#upload").css("display","none");
+            $("#payment").css("display","none");
+            $("#acr").css("display","none");
+
+
+            $('#application-list select').on('change', function() {
+              if( this.value == 1){
+
+                  $("#acr").css("display","block");
+
+              }
+            });
+
+            $('#acr select').on('change', function() {
+              //if( this.value == 1){
+
+                  $("#payment").css("display","block");
+                  $("#upload").css("display","block");
+
+              //}
+            });
+
+
+
+          });
+
+      </script>
+   </head>
+   <body class="live-demo au-body au-grid">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                  <div class="casa-menu">
+
+                  	<div id="dropdown-menu">
+						<div id="dd-menu"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/menu.png" height="20" />Menu</a></div>
+						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
+						<br />
+						<p id="mycasa-home"><a href="#">myCASA home</a></p>
+						<p><a href="#">Switch profile</a></p>
+						<p><a href="mycasa-signed-out.html">Sign out</a></p>
+						</div>
+
+
+                  </div>
+               </div></div>
+            </div>
+         </div>
+         <div class="body">
+			<div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-md-12">
+				This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+         <div class="container">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="dashboard-org.html">myCASA</a></li>
+                      <li>Document and notification submission</li>
+                  </ul>
+               </nav>
+			 <div class="casa-section">
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Document and notification submission</h1>
+                  <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
+               </header>
+			 </div>
+          <div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
+
+
+<div class="au-form-group" id="application-list">
+  <label for="select1">Please select a service category</label>
+  <select id="select1" class="au-select au-select--block">
+    <option value="">Please select</option>
+    <option value="1">Aircraft registration</option>
+    <option value="2">Flight crew licensing</option>
+    <option value="3">Maintenance personnel licensing</option>
+  </select>
+
+</div>
+
+
+<div class="au-form-group" id="acr">
+
+
+  <label for="acr-list">Please select the form you want to submit</label>
+
+<select  class="au-select  au-select--block" id="acr-list" name="cart_1_services"><option value="">Please Select</option><option value="Form 023 - Change of Aircraft Registration Mark">Form 023 - Change of Aircraft Registration Mark</option><option value="Form 027 - Part 2 - New aircraft owner to become registration holder">Form 027 - Part 2 - New aircraft owner to become registration holder</option><option value="Form 029 - Aircraft Registration">Form 029 - Aircraft Registration</option><option value="Form 030 - Change of aircraft details">Form 030 - Change of aircraft details</option><option value="Form 032 - Appointment/Cancellation of Registered Operator">Form 032 - Appointment/Cancellation of Registered Operator</option><option value="Form 099 - Replacement of a certificate of registration">Form 099 - Replacement of a certificate of registration</option><option value="Form 1538 - Request for CASA to record IDERA on Australian Civil Aircraft Register">Form 1538 - Request for CASA to record IDERA on Australian Civil Aircraft Register</option><option value="Form 1539 -Request for CASA to record CDCL">Form 1539 -Request for CASA to record CDCL</option><option value="Form 1540 - IDERA Removal Request">Form 1540 - IDERA Removal Request</option><option value="Form 1541 - CDCL Removal Request">Form 1541 - CDCL Removal Request</option><option value="Form 1542 - IDERA or CDCL De-registration Request">Form 1542 - IDERA or CDCL De-registration Request</option></select>
+
+
+</div>
+
+
+
+
+ <div class="au-form-group" id="upload">
+			<h3 class="au-display-sm">Upload documents</h3>
+			<br>
+			<button class="au-btn au-btn--secondary" type="button">Choose file</button><br>
+			<span class="au-hint-text">You can upoad up to five files per submission. Accepted file types are PDF documents (.pdf), DOC documents (.doc, .docx) and Excel spreadsheets (.xls, .xslx)</span>
+		 </div>
+
+
+<div class="au-form-group" id="payment">
+  <h3 class="au-display-sm">Payment</h3>
+  <br>
+  <div class="au-control-input au-control-input--block">
+<input class="au-control-input__input" type="radio" name="radio-ex" id="phone-radio-block">
+<label class="au-control-input__text" for="phone-radio-block">Pay online </label>
+</div>
+<div class="au-control-input au-control-input--block">
+<input class="au-control-input__input" type="radio" name="radio-ex" id="tablet-radio-block">
+<label class="au-control-input__text" for="tablet-radio-block">Pay by credit card details on form</label>
+</div>
+  </div>
+
+
+                <!-- standard next button -->
+
+   				      <div class="au-form-group">
+   				           <a class="au-btn" href="document-fees.html">Next</a>
+	              </div>
+
+
+                <!-- standard payment button
+
+                <div class="au-form-group">
+                    <a class="au-btn" href="payment.html">Proceed to payment</a>
+                    <p>You will be directed to Westpac for payment</p>
+                </div>
+                -->
+
+                <!-- save and continue
+                <div class="au-form-group">
+                  <hr />
+                  <a href="#" class="au-btn au-btn--secondary">
+                  Save and exit application
+                  </a>
+                </div>
+                -->
+
+            </div>
+			 </div>
+			 </div>
+		  </div>
+
+
+          <div class="footer">
+
+            <div class="footer-wrapper">
+               <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+   </body>
+</html>
